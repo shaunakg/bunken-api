@@ -2,10 +2,10 @@
     "name": "bunken-api",
     "version": "1.0.0",
     "description": "",
-    "main": "app.js",
+    "main": "index.js",
     "scripts": {
-        "build": "node app.js",
-        "dev": "nodemon app.js"
+        "build": "node index.js",
+        "dev": "nodemon index.js"
     },
     "repository": {
         "type": "git",
