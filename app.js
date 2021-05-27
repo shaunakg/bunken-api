@@ -3,6 +3,7 @@ const cors = require('cors')
 const path = require('path')
 require('dotenv').config();
 
+const indexRouter = require('./routes/index')
 const libgenRouter = require('./routes/libgen')
 const openLibraryRouter = require('./routes/openlibrary')
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(cors());
 
+app.use('/', indexRouter)
 app.use('/libgen', libgenRouter)
 app.use('/openlibrary', openLibraryRouter)
 
