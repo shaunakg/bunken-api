@@ -28,6 +28,13 @@ router.get('/', async(req, res) => {
             })
         })
         resp.push(ebook)
+        ebook = {
+            title: '',
+            author: [],
+            link: '',
+            cover_img: '',
+            downloads: []
+        }
     })
     res.json(resp)
 });
