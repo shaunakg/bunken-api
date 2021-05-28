@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const sources = require('../data/sources')
 
 router.get('/', async(req, res) => {
-    res.redirect('https://github.com/laxyapahuja/bunken-api')
+    res.json(sources())
 });
 
 module.exports = router
