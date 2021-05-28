@@ -18,7 +18,7 @@ router.get('/', async(req, res) => {
     }
     response.data._items.forEach(book => {
         ebook.title = book.title
-        ebook.author = book.author
+        ebook.author = book.authors
         ebook.link = null
         ebook.cover_img = `http:${book.library_url}${book.cover_url}`
         book.formats.forEach(format => {
