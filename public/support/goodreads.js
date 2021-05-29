@@ -22,16 +22,16 @@ function ebookElementInflator(results) {
 </select> <button onclick="sourceSelect()">Select</button>
 <div class="bigBoxContent containerWithHeaderContent" style="overflow-y: scroll; height: 300px;" id="resultsDiv">`
     results.forEach(book => {
-        string += `<div class="elementList ">
-        <div class="left">
+        string += `<div class="elementList">
+        <div>
             <a class="actionLinkLite bookPageGenreLink" target="_blank" href="${book.link}">${book.title}</a>
         </div>`
-        if (book.downloads.length != 0) {
+        if (book.downloads != null) {
             book.downloads.forEach(download => {
-                string += `<div class="right"><a href="${download.link}">${download.format}</a></div><br/>`
+                string += `<div><a style="color: blue;" href="${download.link}">${download.format}</a></div>`
             })
         }
-        string += `<div class="right">${book.author}</div>
+        string += `<div>${book.author}</div>
         <div class="clear"></div>
     </div>`
     })
