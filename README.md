@@ -81,4 +81,4 @@ A sample response object looks like:
 ## How to contribute
 Help contribute by using it, finding bugs and opening issues. Pull requests are also appreciated!
 
-API repository available at [laxyapahuja/bunken](https://github.com/laxyapahuja/bunken).
+Extension repository available at [laxyapahuja/bunken](https://github.com/laxyapahuja/bunken).
