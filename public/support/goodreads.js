@@ -35,7 +35,7 @@ function ebookElementInflator(results) {
         <div class="clear"></div>
     </div>`
     })
-    string += '</div>'
+    string += '<div class="right">Powered by <a href="https://github.com/laxyapahuja/bunken">bunken</a></div></div>'
     ebookElement.innerHTML = string
 }
 
