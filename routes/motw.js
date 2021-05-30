@@ -36,6 +36,12 @@ router.get('/', async(req, res) => {
             downloads: []
         }
     })
+    let request = new Request({
+        endpoint: 'motw',
+        title: req.query.title,
+        isbn: req.query.isbn
+    })
+    await request.save()
     res.json(resp)
 });
 

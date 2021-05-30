@@ -26,6 +26,12 @@ router.get('/', async(req, res) => {
     if (resp.length == 0) {
         await openLibrarySearch(title)
     }
+    let request = new Request({
+        endpoint: 'openlibrary',
+        title: req.query.title,
+        isbn: req.query.isbn
+    })
+    await request.save()
     res.json(resp)
 });
 

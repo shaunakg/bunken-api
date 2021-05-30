@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const libgen = require('libgen');
 const cheerio = require('cheerio');
+const Request = require('../models/Request')
 const { default: axios } = require('axios');
 
 const MIRROR = 'http://libgen.is'
@@ -36,6 +37,12 @@ router.get('/', async(req, res) => {
     if (resp.length == 0) {
         await libgenSearch(title)
     }
+    let request = new Request({
+        endpoint: 'libgen',
+        title: req.query.title,
+        isbn: req.query.isbn
+    })
+    await request.save()
     res.json(resp)
 });
 
@@ -81,6 +88,12 @@ router.get('/fiction', async(req, res) => {
             }
         })
     })
+    let request = new Request({
+        endpoint: 'libgen/fiction',
+        title: req.query.title,
+        isbn: req.query.isbn
+    })
+    await request.save()
     res.send(resp)
 })
 

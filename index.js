@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
+const mongoose = require('mongoose')
 require('dotenv').config();
 
 const indexRouter = require('./routes/index')
@@ -10,9 +11,16 @@ const libgenRouter = require('./routes/libgen')
 const openLibraryRouter = require('./routes/openlibrary')
 const motwRouter = require('./routes/motw')
 
+const db = process.env.DB_URL
+
 const app = express()
 
 const port = process.env.PORT || 3000
+
+mongoose.connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
+    .then(() => console.log('MongoDB Connected...'))
+    .catch(err => console.log(err))
+mongoose.set('useFindAndModify', false)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
