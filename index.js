@@ -5,7 +5,6 @@ const mongoose = require('mongoose')
 require('dotenv').config();
 
 const indexRouter = require('./routes/index')
-const supportRouter = require('./routes/support')
 const sourcesRouter = require('./routes/sources')
 const libgenRouter = require('./routes/libgen')
 const openLibraryRouter = require('./routes/openlibrary')
@@ -32,7 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(cors());
 
 app.use('/', indexRouter)
-app.use('/support', supportRouter)
 app.use('/sources', sourcesRouter)
 app.use('/libgen', libgenRouter)
 app.use('/openlibrary', openLibraryRouter)
