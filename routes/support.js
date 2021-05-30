@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Request = require('../models/Request')
 
 router.get('/goodreads.js', async(req, res) => {
     let request = new Request({

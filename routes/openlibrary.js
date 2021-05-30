@@ -1,5 +1,6 @@
 const axios = require('axios');
 const express = require('express');
+const Request = require('../models/Request')
 const router = express.Router();
 
 router.get('/', async(req, res) => {
