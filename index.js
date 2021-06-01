@@ -9,6 +9,7 @@ const sourcesRouter = require('./routes/sources')
 const libgenRouter = require('./routes/libgen')
 const openLibraryRouter = require('./routes/openlibrary')
 const motwRouter = require('./routes/motw')
+const audioBookBayRouter = require('./routes/audiobookbay')
 
 const db = process.env.DB_URL
 
@@ -35,6 +36,7 @@ app.use('/sources', sourcesRouter)
 app.use('/libgen', libgenRouter)
 app.use('/openlibrary', openLibraryRouter)
 app.use('/motw', motwRouter)
+app.use('/audiobookbay', audioBookBayRouter)
 
 app.listen(port, (err) => {
     console.log(`API listening on ${port}!`)
