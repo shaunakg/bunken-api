@@ -15,7 +15,7 @@ router.get('/', async(req, res) => {
         downloads: []
     }
     let sample = await audiobookbay.search(`${title} ${author}`, 1)
-    if (sample.success = false) {
+    if (sample.success == false) {
         res.json([])
     } else {
         let pages = sample.paggination.totalPages
