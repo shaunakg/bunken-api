@@ -1,4 +1,4 @@
-const API = 'https://api.bunken.tk/'
+const API = 'https://bunken-api.laxyapahuja.repl.co/'
 
 let ebookElement = document.createElement('div')
 let ebookResultsElement;
